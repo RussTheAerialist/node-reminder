@@ -1,0 +1,16 @@
+{
+  "name": "reminder",
+  "version": "1.0.0",
+  "description": "Checks a github repro and reminds you via twitter if you haven't commited today",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "expand-home-dir": "0.0.2",
+    "github": "^0.2.4",
+    "twitter": "^1.2.5"
+  }
+}
