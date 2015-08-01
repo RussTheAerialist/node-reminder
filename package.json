@@ -4,13 +4,25 @@
   "description": "Checks a github repro and reminds you via twitter if you haven't commited today",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "run": "node index.js",
+    "lint": "jshint .",
+    "validate": "npm ls"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "expand-home-dir": "0.0.2",
     "github": "^0.2.4",
+    "request": "^2.60.0",
+    "text-statistics": "^0.1.1",
     "twitter": "^1.2.5"
+  },
+  "pre-commit": [
+    "lint",
+    "validate",
+    "test"
+  ],
+  "devDependencies": {
+    "precommit-hook": "^3.0.0"
   }
 }
