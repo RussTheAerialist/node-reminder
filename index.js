@@ -7,7 +7,7 @@ var gha = require('github'),
     stats = require('text-statistics'),
     twitter_config_path = expand('~/.twitter.api.json'),
     no_post_message = '@RussellHay should be ashamed. He hasn\'t written in %d days. http://github.com/RussTheAerialist/writing',
-    statistics_message = '@RussellHay wrote stuff today which has a reading grade level of %s: %s',
+    statistics_message = '@RussellHay wrote stuff today which has a reading grade level of %s (SMOG): %s',
     github_user = process.env.npm_package_config_github_user || 'RussTheAerialist',
     github_repo = process.env.npm_package_config_repo || 'writing'
     ;
@@ -85,7 +85,7 @@ function do_statistics_post() {
 			}
 
 			var calc = new stats(body);
-			var message = util.format(statistics_message, calc.fleschKincaidGradeLevel(), commit_url);
+			var message = util.format(statistics_message, calc.smogIndex(), commit_url);
 			post_twitter_message(message);
 		});
 	});
